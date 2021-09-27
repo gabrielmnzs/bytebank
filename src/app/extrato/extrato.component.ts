@@ -1,3 +1,4 @@
+import { TransferService } from './../service/transfer.service';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -6,11 +7,11 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./extrato.component.scss']
 })
 export class ExtratoComponent implements OnInit {
-  @Input() transfers: any[];
+  transfers: any[];
 
-  constructor() { }
+  constructor(private service: TransferService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.transfers = this.service.transfers;
   }
-
 }
