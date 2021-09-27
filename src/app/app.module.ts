@@ -4,7 +4,7 @@ import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { NewTransferComponent } from './new-transfer/new-transfer.component';
 import { FormsModule } from '@angular/forms';
-import { ExtratoComponent } from './extrato/extrato.component';
+import { ExtractComponent } from './extract/extract.component';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 
@@ -14,7 +14,7 @@ registerLocaleData(localePt, 'pt');
   declarations: [
     AppComponent,
     NewTransferComponent,
-    ExtratoComponent
+    ExtractComponent
   ],
   imports: [
     BrowserModule,

@@ -1,12 +1,12 @@
 import { TransferService } from './../service/transfer.service';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-extrato',
-  templateUrl: './extrato.component.html',
-  styleUrls: ['./extrato.component.scss']
+  selector: 'app-extract',
+  templateUrl: './extract.component.html',
+  styleUrls: ['./extract.component.scss']
 })
-export class ExtratoComponent implements OnInit {
+export class ExtractComponent implements OnInit {
   transfers: any[];
 
   constructor(private service: TransferService) { }
