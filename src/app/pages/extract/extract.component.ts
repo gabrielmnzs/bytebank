@@ -1,6 +1,6 @@
-import { TransferService } from './../service/transfer.service';
+import { TransferService } from './../../service/transfer.service';
 import { Component, OnInit } from '@angular/core';
-import { Transfer } from '../models/transfer.model';
+import { Transfer } from '../../models/transfer.model';
 
 @Component({
   selector: 'app-extract',

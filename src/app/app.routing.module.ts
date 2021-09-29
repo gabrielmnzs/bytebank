@@ -1,5 +1,5 @@
-import { NewTransferComponent } from './new-transfer/new-transfer.component';
-import { ExtractComponent } from './extract/extract.component';
+import { NewTransferComponent } from './pages/new-transfer/new-transfer.component';
+import { ExtractComponent } from './pages/extract/extract.component';
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 
