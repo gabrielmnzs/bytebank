@@ -1,12 +1,16 @@
+import { Transfer } from './../models/transfer.model';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TransferService {
   private transferList: any[];
+  private url = 'http://localhost:3000/transfers';
 
-  constructor() {
+  constructor(private httpClient: HttpClient) {
     this.transferList = [];
   }
 
@@ -14,9 +18,14 @@ export class TransferService {
     return this.transferList;
   }
 
-  add(transfer: any) {
+  all(): Observable<Transfer[]> {
+    return this.httpClient.get<Transfer[]>(this.url);
+  }
+
+  add(transfer: Transfer): Observable<Transfer> {
     this.hydrate(transfer);
-    this.transferList.push(transfer);
+
+    return this.httpClient.post<Transfer>(this.url, transfer);
   }
 
   hydrate(transfer: any) {
