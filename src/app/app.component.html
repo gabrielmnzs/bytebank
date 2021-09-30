@@ -1,7 +1,14 @@
+<div class="container-app">
 <header>
-  <a routerLink="extract">Bytebank</a>
-  <a routerLink="new-transfer" routerLinkActive="active">Nova Transferência</a>
+  <a routerLink="extract" class="logo">Bytebank</a>
+  <a routerLink="new-transfer" routerLinkActive="active">
+    <button>Nova Transferência</button>
+  </a>
 </header>
 <main>
   <router-outlet></router-outlet>
 </main>
+<footer>
+  <p>Qi Sociedade de Crédito S.A.</p>
+</footer>
+</div>

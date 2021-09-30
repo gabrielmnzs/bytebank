@@ -12,16 +12,16 @@ export class NewTransferComponent {
 
   @Output() whenSend = new EventEmitter<any>();
 
-  value: number;
-  destiny: number;
+  value: string;
+  destiny: string;
 
   constructor(private service: TransferService, private router: Router) { }
 
   send() {
     console.log("Nova transferência solicitada");
 
-    const valueEmitter: Transfer = { value: this.value, destiny: this.destiny };
-
+    const valueEmitter: Transfer = { value: this.currencyToNumber(this.value), destiny: this.destiny };
+    console.log(valueEmitter);
     this.service.add(valueEmitter).subscribe(
       (result) => {
         this.clearFields();
@@ -33,8 +33,16 @@ export class NewTransferComponent {
     this.clearFields();
   }
 
-  clearFields(){
-    this.value = 0;
-    this.destiny = 0;
+  currencyToNumber(value: string) {
+    var match = value.match(/[0-9,.]*/);
+
+    if(match !== null) {
+      return parseFloat(match[0].replace(/[.]/g, '').replace(/,/g, '.'));
+    }
+  }
+
+  clearFields() {
+    this.value = '';
+    this.destiny = '';
   }
 }

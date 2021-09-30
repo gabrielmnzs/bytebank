@@ -1,13 +1,35 @@
+.container-app {
+  display: flex;
+  flex-direction: column;
+}
+
 header {
-  background-color: var(--primary);
+  height: 40px;
+  background-color: #FFF;
   padding: 10px;
-  color: white;
+  color: #FFF;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   a {
     color: inherit;
     text-decoration: none;
+
+    button {
+      border: #161E6B solid 1px;
+      background-color: #FFF;
+      color: #161E6B;
+      padding: 5px 10px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+  }
+
+  .logo {
+    font-family: "Montserrat", "Roboto";
+    font-weight: 600;
+    color: #161E6B;
   }
 
   .active {
@@ -16,6 +38,29 @@ header {
 }
 
 main {
-  background-color: #fcfcfc;
-  padding: var(--padding);
+  flex: 1 0 auto;
+  background-color: #FFF;
+}
+
+footer {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: #61666D dotted 1px;
+  background-color: #FFF;
+  flex-shrink: 0;
+
+  p {
+    color: #161E6B;
+  }
+
+  @media only screen and (max-width: 570px) {
+    /* For mobile phones: */
+    height: 40px;
+
+    p {
+      font-size: 12px;
+    }
+  }
 }
